@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo3</title>
+	<script type="text/javascript" src="reactJs/react.js"></script>
+	<script type="text/javascript" src="reactJs/react-dom.js"></script>
+	<script type="text/javascript" src="reactJs/browser.min.js"></script>
+
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		var arr = [
+			<h1>Hello World!</h1>,
+			<h2>React is awesome</h2>
+		];
+		ReactDOM.render(
+			<div>{arr}</div>,
+			document.getElementById("example")
+		)
+	</script>
+	<!-- JSX的基本语法规则：
+							遇到HTML标签以 '<' 开头，就用HTML规则解析；
+							遇到代码块以 '{' 开头，就用Javascript规则解析。
+	JSX允许直接在模板插入js变量，如果这个变量是个数组，则会展开这个数组的所有成员 --> 
+</body>
+</html>

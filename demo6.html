@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo6</title>
+	<script type="text/javascript" src="reactJs/react.js"></script>
+	<script type="text/javascript" src="reactJs/react-dom.js"></script>
+	<script type="text/javascript" src="reactJs/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<div id="haha"></div>
+	<script type="text/babel">
+		var Mytitle = React.createClass({
+			propTypes: {
+				title: React.PropTypes.string.isRequired
+			},
+			render: function(){
+				return <h1>{this.props.title}</h1>
+			}
+		})
+		ReactDOM.render(
+			<Mytitle title="123" />,
+			document.getElementById('example')
+		)
+
+		var Myname = React.createClass({
+			getDefaultProps: function(){
+				return {
+					name: "John"
+				}
+			},
+			render: function(){
+				return <h1>my name is {this.props.name}</h1>
+			}
+		})
+
+		ReactDOM.render(
+			<Myname />,
+			document.getElementById('haha')
+		)
+	</script>
+	<!-- PropTypes属性 
+		组件的属性可以接收任意值，字符串、对象、函数等都可以。有时，我们需要一种机制，验证别人使用组件时，提供的参数是否符合要求。
+		组件类的PropTypes属性，就是用来验证组件实例的属性是否符合要求。
+		getDefaultProps方法可以用来设置组件属性的默认值。
+
+		实例中，Mytitle组件有一个title属性。PropTypes告诉React，这个title属性是必须的，而且它的值必须是字符串。
+	 -->
+</body>
+</html>

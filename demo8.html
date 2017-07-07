@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo8</title>
+	<script type="text/javascript" src="reactJs/react.js"></script>
+	<script type="text/javascript" src="reactJs/react-dom.js"></script>
+	<script type="text/javascript" src="reactJs/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		var LikeButton = React.createClass({
+			getInitialState: function(){
+				return { liked: false};
+			},
+			handleClick: function(event){
+				this.setState({
+					liked: !this.state.liked
+				});
+			},
+			render: function(){
+				var text = this.state.liked ? 'like' : 'haven\'t liked';
+				return (
+					<p onClick={this.handleClick}>
+						You {text} this. Clike to toggle.
+					</p>
+				)
+			}
+		})
+		ReactDOM.render(
+			<LikeButton />,
+			document.getElementById('example')
+
+		)
+	</script>
+	<!-- 组件免不了要与用户互动，React 的一大创新，就是将组件看成是一个状态机，一开始有一个初始状态，然后用户互动，导致状态变化，从而触发重新渲染 UI -->
+</body>
+</html>
